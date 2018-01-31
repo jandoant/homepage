@@ -1,5 +1,5 @@
 <?php
-class Database
+class DbHandler
 {
     private $host = "localhost";
     private $db_name = "homepage";
@@ -8,7 +8,7 @@ class Database
     public $conn;
 
     // get the database connection
-    public function open()
+    public function connect()
     {
         $this->conn=null;
 
@@ -20,7 +20,7 @@ class Database
         }
     }
 
-    public function close(){
+    public function disconnect(){
         $this->conn=null;
     }
 
@@ -83,8 +83,7 @@ class Database
 
                 $prev_pid = $person_id; 
                     
-            }
-                
+            }               
 
             }
             //print_r($attendance_arr);
